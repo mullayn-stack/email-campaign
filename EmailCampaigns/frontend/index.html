@@ -7,24 +7,57 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <h1 id="title">Loading…</h1>
-      <p id="tagline"></p>
-    </header>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <h1 id="title" class="brand__title">Loading…</h1>
+      </div>
+      <a id="adminLink" class="admin-link" target="_blank" rel="noopener">Admin</a>
+    </div>
+    <p id="tagline" class="tagline"></p>
+  </header>
 
-    <form id="emailForm" class="card">
-      <input id="name" type="text" placeholder="Your name" required />
-      <input id="postcode" type="text" placeholder="Postcode (optional)" />
-      <textarea id="note" placeholder="Add a personal note (optional)"></textarea>
-      <button type="submit" id="sendBtn">Open Email</button>
-    </form>
+  <main class="container">
+    <!-- LEFT: Message preview + form (same info as admin) -->
+    <section class="panel">
+      <h2>Your Message</h2>
+      <p class="muted">This is the email that will be sent to your representatives</p>
 
-    <section class="recipients">
-      <h2>Who will receive this</h2>
-      <ul id="recipientsList"></ul>
+      <div class="preview">
+        <div class="row">
+          <div class="label">Subject:</div>
+          <div class="value" id="subjectPreview">Loading…</div>
+        </div>
+        <div class="row">
+          <div class="label">Message:</div>
+          <div class="value">
+            <pre id="bodyPreview" class="body-preview">Loading…</pre>
+          </div>
+        </div>
+      </div>
+
+      <form id="emailForm" class="form">
+        <div class="grid">
+          <input id="name" type="text" placeholder="Your name" required />
+          <input id="postcode" type="text" placeholder="Postcode (optional)" />
+        </div>
+        <textarea id="note" placeholder="Add a personal note (optional)"></textarea>
+        <button type="submit" id="sendBtn" class="cta">Open Email</button>
+        <p class="fineprint">We don’t store your details. Your mail app opens with the message pre-filled.</p>
+      </form>
+    </section>
+
+    <!-- RIGHT: Recipients list (mirrors admin) -->
+    <section class="panel">
+      <h2>Recipients</h2>
+      <ul id="recipientsList" class="recipients"></ul>
     </section>
   </main>
+
+  <footer class="footer">
+    <span>Powered by your voice.</span>
+  </footer>
 
   <script src="script.js"></script>
 </body>
