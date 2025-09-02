@@ -1,0 +1,14 @@
+﻿:root { --bg:#0b0f14; --fg:#e6eef7; --muted:#92a4b5; --accent:#3da9fc; --card:#121821; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--fg); }
+.wrap { max-width:720px; margin:40px auto; padding:0 16px; }
+header h1 { margin:0 0 6px; font-size:2rem; }
+header p { margin:0 0 20px; color:var(--muted); }
+.card { background:var(--card); padding:16px; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.35); display:grid; gap:10px; }
+input, textarea { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #1f2937; background:#0e141c; color:var(--fg); outline:none; }
+textarea { min-height:110px; resize:vertical; }
+button { appearance:none; border:0; padding:12px 16px; border-radius:10px; background:var(--accent); color:#001427; font-weight:700; cursor:pointer; }
+button:disabled { opacity:.6; cursor:not-allowed; }
+.recipients h2 { margin:22px 0 10px; font-size:1rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+.recipients ul { list-style:none; padding:0; margin:0; display:grid; gap:6px; }
+.recipients li { color:var(--muted); font-size:.95rem; }

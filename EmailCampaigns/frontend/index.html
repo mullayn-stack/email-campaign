@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Email Campaign</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1 id="title">Loading…</h1>
+      <p id="tagline"></p>
+    </header>
+
+    <form id="emailForm" class="card">
+      <input id="name" type="text" placeholder="Your name" required />
+      <input id="postcode" type="text" placeholder="Postcode (optional)" />
+      <textarea id="note" placeholder="Add a personal note (optional)"></textarea>
+      <button type="submit" id="sendBtn">Open Email</button>
+    </form>
+
+    <section class="recipients">
+      <h2>Who will receive this</h2>
+      <ul id="recipientsList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
