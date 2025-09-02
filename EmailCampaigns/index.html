@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Email Campaign - Northern Ireland</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Contact your Northern Ireland representatives about important community issues">
+    <meta name="theme-color" content="#1B5E20">
+    
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="NI Campaign">
+    
+    <!-- Prevent zoom on input focus for iOS -->
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+    <!-- Header with Northern Ireland branding -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="6" fill="#1B5E20"/>
+                        <path d="M8 12L16 8L24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" fill="white"/>
+                        <circle cx="16" cy="16" r="3" fill="#1B5E20"/>
+                    </svg>
+                </div>
+                <div class="header-text">
+                    <h1 id="campaign-title" class="title">Loading...</h1>
+                    <p id="campaign-tagline" class="tagline">Please wait...</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="container">
+            <!-- Email Preview Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Your Message</h2>
+                    <p>This is the email that will be sent to your representatives</p>
+                </div>
+                <div class="email-preview">
+                    <div class="email-field">
+                        <strong>Subject:</strong>
+                        <span id="email-subject">Loading...</span>
+                    </div>
+                    <div class="email-field">
+                        <strong>Message:</strong>
+                        <div id="email-body" class="email-body">Loading email template...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipients Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Representatives</h2>
+                    <p>Your message will be sent to the following representatives</p>
+                </div>
+                <div class="recipients-list">
+                    <div id="recipients-container">
+                        <div class="loading-text">Loading representatives...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Your Details</h2>
+                    <p>Fill in your information to send the email above</p>
+                </div>
+                
+                <form id="campaign-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="label">
+                            <span class="label-text">Full Name</span>
+                            <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name"
+                            class="input" 
+                            required 
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                            aria-describedby="name-error"
+                        />
+                        <div id="name-error" class="error-message" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="label">
+                            <span class="label-text">Email Address</span>
+                            <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            class="input" 
+                            required 
+                            autocomplete="email"
+                            placeholder="your.email@example.com"
+                            aria-describedby="email-error"
+                        />
+                        <div id="email-error" class="error-message" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postcode" class="label">
+                            <span class="label-text">Postcode</span>
+                            <span class="optional">(optional)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="postcode" 
+                            name="postcode"
+                            class="input" 
+                            autocomplete="postal-code"
+                            placeholder="BT1 1XX"
+                            pattern="[A-Za-z]{2}[0-9]{1,2} ?[0-9][A-Za-z]{2}"
+                            maxlength="8"
+                        />
+                        <div class="help-text">Include your postcode to help identify your local representatives</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note" class="label">
+                            <span class="label-text">Personal Message</span>
+                            <span class="optional">(optional)</span>
+                        </label>
+                        <textarea 
+                            id="note" 
+                            name="note"
+                            class="textarea" 
+                            rows="4"
+                            placeholder="Add any additional comments or concerns..."
+                            maxlength="500"
+                        ></textarea>
+                        <div class="char-counter">
+                            <span id="char-count">0</span>/500 characters
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="form-actions">
+                        <div class="send-info">
+                            <h4>What happens next:</h4>
+                            <ol class="send-steps">
+                                <li>Click "Open Email App" below</li>
+                                <li>Your email app will open with everything pre-filled</li>
+                                <li>Review the message and click "Send" in your email app</li>
+                                <li>Done! Your message is sent from your own email</li>
+                            </ol>
+                        </div>
+                        <button type="submit" id="send-btn" class="btn-primary">
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.3333 2.5L9.16667 11.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.3333 2.5L12.5 18.3333L9.16667 11.6667L1.66667 8.33333L18.3333 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="btn-text">Open Email App</span>
+                        </button>
+                        <div class="help-note">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="8" cy="8" r="7" stroke="#666" stroke-width="2"/>
+                                <path d="M8 4V8L11 11" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            This opens your email app (Gmail, Outlook, etc.) with the message ready to send
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Info section -->
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>Why this works better</h3>
+                    <p><strong>Your email = Your voice:</strong> When representatives receive emails from real people's email accounts, it carries more weight than automated messages.</p>
+                    <p><strong>100% authentic:</strong> The email comes directly from you, making it genuine constituent contact.</p>
+                    <p><strong>No spam filters:</strong> Personal emails are less likely to be blocked or filtered.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Your privacy</h3>
+                    <p><strong>Complete privacy:</strong> Your information stays on your device. We don't store, track, or share any personal details.</p>
+                    <p><strong>No accounts needed:</strong> Just fill out the form and your email app does the rest.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Northern Ireland Campaign. Engage with your representatives.</p>
+        </div>
+    </footer>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading" aria-hidden="true">
+        <div class="spinner"></div>
+        <p>Loading campaign details...</p>
+    </div>
+
+    <!-- Success modal -->
+    <div id="success-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="#1B5E20" stroke="#1B5E20" stroke-width="4"/>
+                    <path d="M16 24L22 30L32 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Email App Opening!</h3>
+            <p>Your email app should now be open with your message ready to send.</p>
+            <div class="modal-steps">
+                <strong>Next steps:</strong>
+                <ol>
+                    <li>Check your email app (Gmail, Outlook, etc.)</li>
+                    <li>Review the pre-filled message</li>
+                    <li>Click "Send" to deliver your message</li>
+                </ol>
+            </div>
+            <button id="close-modal" class="btn-secondary">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

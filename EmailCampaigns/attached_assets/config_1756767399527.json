@@ -1,0 +1,16 @@
+{
+  "title": "Protect Our Community",
+  "tagline": "Tell your representatives to stop spreading misinformation.",
+  "subject": "Protect our community",
+  "body": "Dear Representative,\n\nI am writing to urge you to stop spreading misinformation and protect our community.\n\nRegards,\n{{name}}\n{{postcode}}",
+  "recipients": [
+    {
+      "name": "Representative 1",
+      "email": "rep1@example.com"
+    },
+    {
+      "name": "Representative 2",
+      "email": "rep2@example.com"
+    }
+  ]
+}

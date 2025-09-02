@@ -1,0 +1,1060 @@
+/* Mobile-first CSS for Northern Ireland Email Campaign */
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+    background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+    color: #1B5E20;
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #2E7D32;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: inherit;
+    word-break: break-word;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.9;
+    color: inherit;
+    font-weight: 400;
+}
+
+/* Admin specific header */
+.admin-header {
+    background: linear-gradient(135deg, #4A148C 0%, #6A1B9A 100%);
+}
+
+/* Navigation */
+.admin-nav {
+    background: white;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 0.75rem 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    min-height: 44px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background: #F5F5F5;
+    color: #1B5E20;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Main content */
+.main {
+    padding: 1.5rem 0;
+    flex: 1;
+}
+
+.admin-main {
+    padding: 2rem 0;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(27, 94, 32, 0.08);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: #1B5E20;
+}
+
+.card-header p {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Forms */
+.form {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #1B5E20;
+}
+
+.label-text {
+    flex: 1;
+}
+
+.required {
+    color: #D32F2F;
+    font-weight: 600;
+}
+
+.optional {
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+/* Input styles */
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.4;
+    background: white;
+    color: #333;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 48px;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #1B5E20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+}
+
+.input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #D32F2F;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+.textarea.large {
+    min-height: 200px;
+}
+
+/* Help text */
+.help-text {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.char-counter {
+    margin-top: 0.5rem;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+/* Error messages */
+.error-message {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #D32F2F;
+    font-weight: 500;
+    min-height: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 56px;
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-primary.large {
+    font-size: 1.125rem;
+    padding: 1.25rem 1.5rem;
+    min-height: 64px;
+}
+
+.btn-icon {
+    flex-shrink: 0;
+}
+
+.btn-text {
+    flex: 1;
+    text-align: center;
+}
+
+/* Form actions */
+.form-actions {
+    margin-top: 2rem;
+}
+
+.send-info {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.send-info h4 {
+    color: #1B5E20;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+}
+
+.send-steps {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #2E7D32;
+}
+
+.send-steps li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.875rem;
+}
+
+.send-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.help-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #F5F5F5;
+    border-radius: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.help-note svg {
+    flex-shrink: 0;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.modal[aria-hidden="true"] {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-icon {
+    margin-bottom: 1.5rem;
+}
+
+.modal-content h3 {
+    color: #1B5E20;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.modal-steps {
+    background: #F8F9FA;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.modal-steps strong {
+    color: #1B5E20;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.modal-steps ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #2E7D32;
+}
+
+.modal-steps li {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.modal-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.btn-secondary {
+    background: #F5F5F5;
+    color: #1B5E20;
+    border: 2px solid #E0E0E0;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 48px;
+}
+
+.btn-secondary:hover {
+    background: #EEEEEE;
+    border-color: #BDBDBD;
+}
+
+/* Analytics Modal Styles */
+.analytics-modal {
+    max-width: 800px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #F5F5F5;
+    color: #1B5E20;
+}
+
+.analytics-loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.analytics-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.analytics-card {
+    background: #F8F9FA;
+    border: 1px solid #E0E0E0;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #1B5E20;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1B5E20;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.card-label {
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.recent-activity h4 {
+    color: #1B5E20;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.sends-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.send-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: #F8F9FA;
+    border: 1px solid #E0E0E0;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.send-item:last-child {
+    margin-bottom: 0;
+}
+
+.send-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.send-name {
+    font-weight: 600;
+    color: #1B5E20;
+    font-size: 0.875rem;
+    margin-bottom: 0.125rem;
+}
+
+.send-details {
+    color: #666;
+    font-size: 0.75rem;
+}
+
+.send-time {
+    color: #999;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.no-data {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.analytics-error {
+    text-align: center;
+    color: #D32F2F;
+    padding: 2rem;
+}
+
+.analytics-error p {
+    margin: 0;
+    color: inherit;
+}
+
+.sticky-actions {
+    position: sticky;
+    bottom: 1rem;
+    background: white;
+    padding: 1rem;
+    margin: 2rem -1rem -1rem;
+    border-top: 1px solid #E0E0E0;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Admin form sections */
+.form-section {
+    background: white;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.section-header {
+    padding: 1.5rem 1.5rem 1rem;
+    background: #F8F9FA;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.section-header h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: #1B5E20;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.admin-form .form-group {
+    padding: 0 1.5rem;
+}
+
+.admin-form .form-actions {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* Status messages */
+.status-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1rem;
+}
+
+.status-message.success {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid #C8E6C9;
+}
+
+.status-message.error {
+    background: #FFEBEE;
+    color: #D32F2F;
+    border: 1px solid #FFCDD2;
+}
+
+.status-message.loading {
+    background: #E3F2FD;
+    color: #1976D2;
+    border: 1px solid #BBDEFB;
+}
+
+/* Email preview styles */
+.email-preview {
+    padding: 1.5rem;
+    background: #F8F9FA;
+    border-radius: 0.75rem;
+    margin: 1.5rem;
+    border: 1px solid #E0E0E0;
+}
+
+.email-field {
+    margin-bottom: 1rem;
+}
+
+.email-field:last-child {
+    margin-bottom: 0;
+}
+
+.email-field strong {
+    color: #1B5E20;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.email-body {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #E0E0E0;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #333;
+    font-family: inherit;
+    font-size: 0.875rem;
+}
+
+/* Recipients list styles */
+.recipients-list {
+    padding: 1.5rem;
+}
+
+.recipient-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: #F8F9FA;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #E0E0E0;
+}
+
+.recipient-item:last-child {
+    margin-bottom: 0;
+}
+
+.recipient-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #1B5E20;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+}
+
+.recipient-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.recipient-name {
+    font-weight: 600;
+    color: #1B5E20;
+    font-size: 0.875rem;
+    margin-bottom: 0.125rem;
+}
+
+.recipient-email {
+    color: #666;
+    font-size: 0.75rem;
+    word-break: break-all;
+}
+
+.loading-text {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 1rem;
+}
+
+/* Info sections */
+.info-section {
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.05);
+}
+
+.info-card h3 {
+    color: #1B5E20;
+    margin-bottom: 1rem;
+}
+
+.steps {
+    padding-left: 1.25rem;
+    color: #2E7D32;
+}
+
+.steps li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+    background: #1B5E20;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    color: inherit;
+}
+
+/* Loading indicator */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.loading[aria-hidden="true"] {
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #E0E0E0;
+    border-top: 4px solid #1B5E20;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Admin body styling */
+.admin-body {
+    background: #F5F5F5;
+}
+
+/* Responsive design - Tablet and up */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 0 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .main {
+        padding: 2rem 0;
+    }
+    
+    .card-header {
+        padding: 2rem 2rem 1.5rem;
+    }
+    
+    .form {
+        padding: 2rem;
+    }
+    
+    .admin-form .form-group {
+        padding: 0 2rem;
+    }
+    
+    .admin-form .form-actions {
+        padding: 0 2rem 2rem;
+    }
+    
+    .sticky-actions {
+        position: static;
+        margin: 2rem -2rem -2rem;
+    }
+}
+
+/* Responsive design - Desktop and up */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    .form-row {
+        gap: 1.5rem;
+    }
+    
+    .btn-primary {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .logo svg,
+    .btn-icon,
+    .nav-link svg {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .admin-nav,
+    .form-actions,
+    .loading {
+        display: none;
+    }
+    
+    .main {
+        padding: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .spinner {
+        animation: none;
+        border-top-color: transparent;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .input,
+    .textarea {
+        border-width: 3px;
+    }
+    
+    .btn-primary {
+        border: 2px solid transparent;
+    }
+    
+    .btn-primary:focus {
+        border-color: currentColor;
+    }
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+    /* Keep light theme for better readability and Northern Ireland branding */
+    /* But ensure good contrast for system UI elements */
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        color-scheme: light;
+    }
+}
+
+/* Focus management for keyboard navigation */
+.input:focus,
+.textarea:focus,
+.btn-primary:focus,
+.nav-link:focus {
+    outline: 2px solid #1B5E20;
+    outline-offset: 2px;
+}
+
+/* Touch target sizing for mobile */
+@media (pointer: coarse) {
+    .input,
+    .textarea,
+    .btn-primary,
+    .nav-link {
+        min-height: 48px;
+    }
+    
+    .label {
+        min-height: 24px;
+        margin-bottom: 0.75rem;
+    }
+}

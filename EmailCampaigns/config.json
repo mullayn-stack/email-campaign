@@ -1,0 +1,16 @@
+{
+  "title": "Protect Our Community",
+  "tagline": "Contact your representatives in Northern Ireland about the issues that matter to you.",
+  "subject": "Urgent: Community concerns from your constituent",
+  "body": "Dear Representative,\n\nI am writing as your constituent to express my concerns about issues affecting our community in Northern Ireland.\n\nAs someone who lives in this area, I believe it is important that our elected representatives understand the challenges we face and work to address them.\n\nI would appreciate your consideration of these matters and look forward to your response.\n\nYours sincerely,\n{{name}}\n{{postcode}}",
+  "recipients": [
+    {
+      "name": "Your Local MLA",
+      "email": "contact@example.com"
+    },
+    {
+      "name": "Your MP",
+      "email": "mp@example.com"
+    }
+  ]
+}

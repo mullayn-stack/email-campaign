@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard - Email Campaign</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Admin Dashboard</h1>
+      <form id="admin-form">
+        <fieldset>
+          <legend>Authentication</legend>
+          <div class="form-group">
+            <label for="admin-username">Username</label>
+            <input type="text" id="admin-username" required />
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" required />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Campaign Settings</legend>
+          <div class="form-group">
+            <label for="cfg-title">Title</label>
+            <input type="text" id="cfg-title" required />
+          </div>
+          <div class="form-group">
+            <label for="cfg-tagline">Tagline</label>
+            <input type="text" id="cfg-tagline" />
+          </div>
+          <div class="form-group">
+            <label for="cfg-subject">Email Subject</label>
+            <input type="text" id="cfg-subject" required />
+          </div>
+          <div class="form-group">
+            <label for="cfg-body">Email Body</label>
+            <textarea id="cfg-body" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="cfg-recipients"
+              >Recipients (one per line: Name &lt;email&gt;)</label
+            >
+            <textarea id="cfg-recipients" rows="4" required></textarea>
+          </div>
+        </fieldset>
+        <button type="submit">Save Settings</button>
+      </form>
+      <div id="status-msg"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
