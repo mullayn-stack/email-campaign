@@ -1,7 +1,6 @@
-﻿backend\node_modules/
-frontend\node_modules/
-.env
-*.env
-*.sqlite
+node_modules
+dist
 .DS_Store
-Thumbs.db
+server/public
+vite.config.ts.*
+*.tar.gz

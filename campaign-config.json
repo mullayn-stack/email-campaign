@@ -1,0 +1,24 @@
+{
+  "title": "Protect Our Community",
+  "tagline": "Tell your representatives to stop spreading misinformation and stand up for truth in our democracy.",
+  "subject": "Protect our community",
+  "body": "Dear Representative,\n\nI am writing to urge you to stop spreading misinformation and protect our community.\n\nRegards,\n{{name}}\n{{postcode}}",
+  "recipients": [
+    {
+      "name": "Rep. Alexandra Chen",
+      "email": "alexandra.chen@house.gov"
+    },
+    {
+      "name": "Sen. Michael Rodriguez",
+      "email": "michael.rodriguez@senate.gov"
+    },
+    {
+      "name": "Rep. David Kim",
+      "email": "david.kim@house.gov"
+    },
+    {
+      "name": "Sen. Sarah Wilson",
+      "email": "sarah.wilson@senate.gov"
+    }
+  ]
+}
